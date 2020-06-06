@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "370db96a09303f71cd583df9249d4ba5",
+    "revision": "265b1855efc9461b881ad920dc1464db",
     "url": "/mailto-link-creator/index.html"
   },
   {
