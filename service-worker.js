@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mailto-link-creator/precache-manifest.ce6138e61ac8f6ef9c7b3aab780f642d.js"
+  "/mailto-link-creator/precache-manifest.f65a4a0023e5c98bc8e62682bbd5ede4.js"
 );
 
 self.addEventListener('message', (event) => {
