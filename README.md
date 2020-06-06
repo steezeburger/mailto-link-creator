@@ -7,7 +7,7 @@ An app to easily create shareable links for autofilled e-mail campaigns.
 ### Roadmap
 - [x] `mailto:` link generation
 - [x] link shortening with TinyUrl
-- [ ] tests
+- [x] tests
 - [ ] custom url shortener
 - [ ] a feature to generate a page with a list of links where user can type in name to autofill the entire email body
 
