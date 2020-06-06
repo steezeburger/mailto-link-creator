@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mailto-link-creator/static/css/main.c9f9fdeb.chunk.css",
+    "main.js": "/mailto-link-creator/static/js/main.fea7f953.chunk.js",
+    "main.js.map": "/mailto-link-creator/static/js/main.fea7f953.chunk.js.map",
+    "runtime-main.js": "/mailto-link-creator/static/js/runtime-main.44ec305a.js",
+    "runtime-main.js.map": "/mailto-link-creator/static/js/runtime-main.44ec305a.js.map",
+    "static/js/2.c28f459a.chunk.js": "/mailto-link-creator/static/js/2.c28f459a.chunk.js",
+    "static/js/2.c28f459a.chunk.js.map": "/mailto-link-creator/static/js/2.c28f459a.chunk.js.map",
+    "index.html": "/mailto-link-creator/index.html",
+    "precache-manifest.ad300f3d26d84abf21c555c4cf5e9a16.js": "/mailto-link-creator/precache-manifest.ad300f3d26d84abf21c555c4cf5e9a16.js",
+    "service-worker.js": "/mailto-link-creator/service-worker.js",
+    "static/css/main.c9f9fdeb.chunk.css.map": "/mailto-link-creator/static/css/main.c9f9fdeb.chunk.css.map",
+    "static/js/2.c28f459a.chunk.js.LICENSE.txt": "/mailto-link-creator/static/js/2.c28f459a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44ec305a.js",
+    "static/js/2.c28f459a.chunk.js",
+    "static/css/main.c9f9fdeb.chunk.css",
+    "static/js/main.fea7f953.chunk.js"
+  ]
+}
