@@ -2,7 +2,7 @@
 An app to easily create shareable links for autofilled e-mail campaigns.
 
 ### Current Limitations
-- [ ] you'll generally still need at least one placeholder in the email body for the sender's name, something like `[YOUR NAME HERE]`
+* you'll generally still need at least one placeholder in the email body for the sender's name, something like `[YOUR NAME HERE]`
 
 ### Roadmap
 - [x] `mailto:` link generation
