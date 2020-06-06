@@ -1,0 +1,34 @@
+{
+  "env": {
+     "browser": true,
+     "es6": true,
+     "jest": true
+  },
+  "extends": [
+     "airbnb",
+     "plugin:fp/recommended",
+     "plugin:jest/recommended"
+  ],
+  "globals": {
+     "Atomics": "readonly",
+     "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+     "ecmaFeatures": {
+        "jsx": true
+     },
+     "ecmaVersion": 11,
+     "sourceType": "module"
+  },
+  "plugins": [
+     "fp",
+     "import",
+     "jest",
+     "react",
+     "react-hooks"
+  ],
+  "rules": {
+     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}]
+  }
+}
