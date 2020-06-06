@@ -1,5 +1,7 @@
+import { pipe } from 'ramda';
 import React, { useState } from 'react';
-import createLink from './lib/linkGenerator';
+import createMailToLink from './lib/mailtoLinkGenerator';
+import createTinyUrlLink from './lib/tinyUrlLinkGenerator';
 import './App.css';
 
 
@@ -14,11 +16,7 @@ function App() {
   const onSubjectChange = (e) => setSubject(e.target.value);
   const onToChange = (e) => setTo(e.target.value);
 
-  const onShortenLinkClick = (link) => {
-    const tinyUrl = 'https://tinyurl.com/create.php?source=indexpage&url=';
-    const fullLink = `${tinyUrl}${link}`;
-    return window.open(fullLink);
-  };
+  const onShortenLinkClick = (link) => pipe(createTinyUrlLink, window.open)({ mailtoLink: link});
 
   const form = {
     body,
@@ -27,7 +25,7 @@ function App() {
     to,
   };
 
-  const link = createLink(form);
+  const link = createMailToLink(form);
 
   return (
     <div className="App">

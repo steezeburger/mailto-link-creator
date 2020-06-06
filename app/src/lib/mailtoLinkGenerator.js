@@ -1,12 +1,12 @@
 import { pipe } from 'ramda';
 
-const generateLink = ({
+const buildLink = ({
   body,
   cc,
   subject,
   to,
 }) => `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-const createLink = (form) => pipe(generateLink, encodeURIComponent)(form);
+const createLink = (form) => pipe(buildLink, encodeURIComponent)(form);
 
 export default createLink;
