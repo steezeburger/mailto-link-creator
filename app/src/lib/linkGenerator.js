@@ -1,18 +1,7 @@
-import * as R from 'ramda';
-
-// TODO - generate body, url encode inputs, generate link
-const createLink = ({
-  body,
-  cc,
-  fullName,
-  subject,
-  to,
-}) => true;
-
-const generateBody = ({
-  body,
-  fullName,
-}) => true;
+import {
+  map,
+  pipe,
+} from 'ramda';
 
 const generateLink = ({
   body,
@@ -21,14 +10,6 @@ const generateLink = ({
   to,
 }) => `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-const urlEncodeString = (str) => R.pipe(
-  encodeURIComponent,
-  str,
-);
+const createLink = (form) => pipe(map(encodeURIComponent), generateLink)(form);
 
-export default {
-  createLink,
-  generateBody,
-  generateLink,
-  urlEncodeString,
-};
+export default createLink;
