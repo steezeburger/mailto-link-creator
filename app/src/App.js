@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import createLink from './lib/linkGenerator';
-// import logo from './logo.svg';
 import './App.css';
+
 
 function App() {
   const [body, setBody] = useState('');
@@ -13,6 +13,12 @@ function App() {
   const onCCChange = (e) => setCC(e.target.value);
   const onSubjectChange = (e) => setSubject(e.target.value);
   const onToChange = (e) => setTo(e.target.value);
+
+  const onShortenLinkClick = (link) => {
+    const tinyUrl = 'https://tinyurl.com/create.php?source=indexpage&url=';
+    const fullLink = `${tinyUrl}${link}`;
+    return window.open(fullLink);
+  };
 
   const form = {
     body,
@@ -28,35 +34,46 @@ function App() {
 
       <p>`mailto:` link creator</p>
       <p>
-        use this tool to create links that can be opened in your email client,
-        and that can autopopulate fields such as to, cc, subject, and body.
+        use this tool to create links that can be opened in an email client,
+        with fields such as to, cc, subject, and body already filled out.
       </p>
 
-      <div>
-        <form>
-          <label htmlFor="to">
-            to:
-            <input id="to" type="text" value={form.to} onChange={onToChange} />
-          </label>
+      <div className="container">
+        <form onSubmit={(e) => e.preventDefault() }>
+          <ul className="flex-outer">
 
-          <label htmlFor="cc">
-            cc:
-            <input id="cc" type="text" value={form.cc} onChange={onCCChange} />
-          </label>
+            <li>
+              <label htmlFor="to">to</label>
+              <input type="text" id="to" value={form.to} onChange={onToChange}/>
+            </li>
 
-          <label htmlFor="subject">
-            subject:
-            <input id="subject" type="text" value={form.subject} onChange={onSubjectChange} />
-          </label>
+            <li>
+              <label htmlFor="cc">cc</label>
+              <input type="text" id="cc" value={form.cc} onChange={onCCChange}/>
+            </li>
 
-          <label htmlFor="body">
-            body:
-            <textarea id="body" type="text" value={form.body} onChange={onBodyChange} />
-          </label>
+            <li>
+              <label htmlFor="subject">subject</label>
+              <input type="text" id="subject" value={form.subject} onChange={onSubjectChange}/>
+            </li>
 
-          <textarea readOnly value={link} />
+            <li>
+              <label htmlFor="body">body</label>
+              <textarea className="body" type="text" id="body" value={form.body} onChange={onBodyChange}/>
+            </li>
 
-          <input type="submit" value="shorten link" />
+            <li>
+              <label htmlFor="results">results</label>
+              <textarea id="results" className="results" readOnly value={link} />
+            </li>
+
+            <li>
+              <button type="submit" onClick={(e) => (e.preventDefault && onShortenLinkClick(link))}>
+                generate shortened link via TinyUrl
+              </button>
+            </li>
+
+          </ul>
         </form>
       </div>
 

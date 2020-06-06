@@ -1,7 +1,4 @@
-import {
-  map,
-  pipe,
-} from 'ramda';
+import { pipe } from 'ramda';
 
 const generateLink = ({
   body,
@@ -10,6 +7,6 @@ const generateLink = ({
   to,
 }) => `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-const createLink = (form) => pipe(map(encodeURIComponent), generateLink)(form);
+const createLink = (form) => pipe(generateLink, encodeURIComponent)(form);
 
 export default createLink;
