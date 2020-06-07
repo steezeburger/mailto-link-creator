@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/steezeburger/mailto-link-creator/workflows/CI/badge.svg)](https://github.com/steezeburger/mailto-link-creator/actions)
+
 ## mailto: link creator
 An app to easily create shareable links for autofilled e-mail campaigns.
 
