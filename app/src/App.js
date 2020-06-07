@@ -1,31 +1,30 @@
-import { pipe } from 'ramda';
-import React, { useState } from 'react';
-import createMailToLink from './lib/mailtoLinkGenerator';
-import createTinyUrlLink from './lib/tinyUrlLinkGenerator';
-import './App.css';
+import { pipe } from 'ramda'
+import React, { useState } from 'react'
+import createMailToLink from './lib/mailtoLinkGenerator'
+import createTinyUrlLink from './lib/tinyUrlLinkGenerator'
+import './App.css'
 
+function App () {
+  const [body, setBody] = useState('')
+  const [cc, setCC] = useState('')
+  const [subject, setSubject] = useState('')
+  const [to, setTo] = useState('')
 
-function App() {
-  const [body, setBody] = useState('');
-  const [cc, setCC] = useState('');
-  const [subject, setSubject] = useState('');
-  const [to, setTo] = useState('');
+  const onBodyChange = (e) => setBody(e.target.value)
+  const onCCChange = (e) => setCC(e.target.value)
+  const onSubjectChange = (e) => setSubject(e.target.value)
+  const onToChange = (e) => setTo(e.target.value)
 
-  const onBodyChange = (e) => setBody(e.target.value);
-  const onCCChange = (e) => setCC(e.target.value);
-  const onSubjectChange = (e) => setSubject(e.target.value);
-  const onToChange = (e) => setTo(e.target.value);
-
-  const onShortenLinkClick = (link) => pipe(createTinyUrlLink, window.open)({ mailtoLink: link});
+  const onShortenLinkClick = pipe(createTinyUrlLink, window.open)
 
   const form = {
     body,
     cc,
     subject,
     to,
-  };
+  }
 
-  const link = createMailToLink(form);
+  const link = createMailToLink(form)
 
   return (
     <div className="App">
@@ -66,7 +65,7 @@ function App() {
             </li>
 
             <li>
-              <button type="submit" onClick={(e) => (e.preventDefault && onShortenLinkClick(link))}>
+              <button id="shorten-link" type="submit" onClick={(e) => (e.preventDefault && onShortenLinkClick(link))}>
                 generate shortened link via TinyUrl
               </button>
             </li>
@@ -76,7 +75,7 @@ function App() {
       </div>
 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
-const createLink = ({
-  mailtoLink,
-}) => `https://tinyurl.com/create.php?source=indexpage&url=${mailtoLink}`;
+import { concat } from 'ramda'
 
-export default createLink;
+const createLink = concat('https://tinyurl.com/create.php?source=indexpage&url=')
+
+export default createLink
