@@ -34,9 +34,9 @@ jobs:
 
     - name: Test
       run: yarn test
-      
+
     - name: Build
       run: yarn build
-    
+
     - name: Deploy
-      run: gh-pages -d build
+      run: yarn deploy

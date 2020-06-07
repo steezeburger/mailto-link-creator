@@ -5,7 +5,7 @@ branch=$(git rev-parse --abbrev-ref HEAD);
 
 
 if [[ $branch == \"master\" ]]; then
-  eslint .. && yarn test && yarn build && gh-pages -d build
+  yarn lint && yarn test && yarn build && yarn deploy
 else
   echo \"You can only deploy from master.\" && exit 1
 fi
