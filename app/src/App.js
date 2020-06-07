@@ -32,7 +32,7 @@ function App () {
       <p>`mailto:` link creator</p>
       <p>
         use this tool to create links that can be opened in an email client,
-        with fields such as to, cc, subject, and body already filled out.
+        with fields such as "to", "cc", "subject", and "body" already filled out.
       </p>
 
       <div className="container">
@@ -61,7 +61,10 @@ function App () {
 
             <li>
               <label htmlFor="results">results</label>
-              <textarea id="results" className="results" readOnly value={link} />
+              <div className="results">
+                <textarea id="results" readOnly value={link} />
+                <p>note: this is the unshortened link. shortening the link makes it easiser to share.</p>
+              </div>
             </li>
 
             <li>

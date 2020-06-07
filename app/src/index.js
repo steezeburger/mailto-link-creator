@@ -1,4 +1,4 @@
-/* eslint-disable fp/no-unused-expression */
+/* eslint-disable */
 
 import React from 'react'
 import ReactDOM from 'react-dom'
