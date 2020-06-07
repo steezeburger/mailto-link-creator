@@ -2,8 +2,6 @@
 
 branch=$(git rev-parse --abbrev-ref HEAD);
 
-
-
 if [[ $branch == \"master\" ]]; then
   yarn lint && yarn test && yarn build && yarn deploy
 else
