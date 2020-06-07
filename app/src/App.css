@@ -8,7 +8,7 @@
 .container {
   width: 80%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .container * {
@@ -42,17 +42,19 @@
   margin-bottom: 20px;
 }
 
-.flex-outer li label,
-.flex-outer li p {
+.flex-outer li label {
   padding: 8px;
   font-weight: 300;
   letter-spacing: .09em;
 }
 
-.flex-outer > li > label,
+.flex-outer > li > label {
+  flex: 1 0 0px;
+  max-width: 200px;
+}
+
 .flex-outer li p {
   flex: 1 0 0px;
-  max-width: 220px;
 }
 
 .flex-outer > li > label + *,
@@ -72,6 +74,7 @@
 
 .flex-outer li button {
   margin-left: auto;
+  margin-top: 25px;
   padding: 8px 16px;
   border: none;
   background: #333;
@@ -88,7 +91,11 @@
   min-height: 300px;
 }
 
-.results {
+.results textarea {
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 20px 0px 0px;
+}
+
+.results p {
+  padding: 0;
 }

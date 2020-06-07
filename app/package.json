@@ -20,11 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "deploy": "./bin/deploy.sh",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -39,12 +36,16 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-standard": "^14.1.1",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "gh-pages": "^3.0.0"
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.0.0",
+    "typescript": "^3.9.5"
   }
 }

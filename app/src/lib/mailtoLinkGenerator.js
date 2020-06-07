@@ -1,12 +1,12 @@
-import { pipe } from 'ramda';
+import { pipe } from 'ramda'
 
 const buildLink = ({
   body,
   cc,
   subject,
   to,
-}) => `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+}) => `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`
 
-const createLink = (form) => pipe(buildLink, encodeURIComponent)(form);
+const createLink = pipe(buildLink, encodeURIComponent)
 
-export default createLink;
+export default createLink
