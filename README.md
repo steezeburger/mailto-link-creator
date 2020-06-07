@@ -20,5 +20,5 @@ E-mail me if you'd like to contribute. Designers, programmers, or even those tha
 You can simply fork the repo to begin contributing.
 * install depdencies - `yarn install`
 * run development server - `yarn start`
-* run tests in watch mode (rerun after file saves) - `yarn test`
+* run tests in watch mode (reruns after file saves) - `yarn test`
 * build production release - `yarn build`
