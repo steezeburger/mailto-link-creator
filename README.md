@@ -22,4 +22,3 @@ You can simply fork the repo to begin contributing.
 * run development server - `yarn start`
 * run tests in watch mode (rerun after file saves) - `yarn test`
 * build production release - `yarn build`
-* deploying is handled via gh-pages, and it's dead simple - `yarn deploy` NOTE: this builds a production build then deploys to gh-pages
