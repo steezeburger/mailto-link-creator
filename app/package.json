@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "branch=$(git rev-parse --abbrev-ref HEAD); if [[ $branch == \"master\" ]]; then yarn build; else echo \"You can only deploy from master\" && exit 1; fi;",
     "deploy": "gh-pages -d build",
     "lint": "eslint ."
   },
@@ -43,7 +43,6 @@
     "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "gh-pages": "^3.0.0",
-    "typescript": "^3.9.5"
+    "gh-pages": "^3.0.0"
   }
 }
