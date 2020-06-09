@@ -12,7 +12,6 @@ it('initializes correctly', async () => {
   const expectedInitialResults = 'mailto%3A%3Fcc%3D%26subject%3D%26body%3D'
 
   const results = getResults(dom.container)
-
   return expect(results).toHaveTextContent(expectedInitialResults)
 })
 

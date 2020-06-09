@@ -1,10 +1,30 @@
-import { pipe } from 'ramda'
-import React, { useState } from 'react'
+import { partial, pipe } from 'ramda'
+import React, { useState, useEffect } from 'react'
+
 import createMailToLink from './lib/mailtoLinkGenerator'
 import createTinyUrlLink from './lib/tinyUrlLinkGenerator'
+import initializeGA from './lib/ga/initializeGA'
+import recordEvent from './lib/ga/recordEvent'
+
 import './App.css'
 
+const effect = (f) => (x) => (f(x), x) // eslint-disable-line
+
+const recordShortenLinkEvent = partial(
+  recordEvent,
+  ['mailto-link-creator', 'mailto-link-creator'],
+)
+
+const onShortenLinkClick = pipe(
+  createTinyUrlLink,
+  effect(recordShortenLinkEvent),
+  window.open,
+)
+
 function App () {
+  // FIXME - way to write this without violating fp/no-unused-expression?
+  useEffect(() => initializeGA, []) // eslint-disable-line
+
   const [body, setBody] = useState('')
   const [cc, setCC] = useState('')
   const [subject, setSubject] = useState('')
@@ -14,8 +34,6 @@ function App () {
   const onCCChange = (e) => setCC(e.target.value)
   const onSubjectChange = (e) => setSubject(e.target.value)
   const onToChange = (e) => setTo(e.target.value)
-
-  const onShortenLinkClick = pipe(createTinyUrlLink, window.open)
 
   const form = {
     body,
